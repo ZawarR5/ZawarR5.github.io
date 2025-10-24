@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Zawar Ahmad – Graphic & UI/UX Designer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root{ --bg:#fafafa; --text:#222; --accent:#0052ff; --card:#fff; --radius:8px; font:16px/1.6 "Segoe UI",system-ui,sans-serif; }
+    *{ box-sizing:border-box; margin:0; padding:0; }
+    body{ background:var(--bg); color:var(--text); display:flex; flex-direction:column; min-height:100vh; }
+    header{ text-align:center; padding:3rem 1rem 2rem; }
+    header h1{ font-size:2.2rem; margin-bottom:.2rem; }
+    header p{ color:#555; }
+    nav{ display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom:2rem; }
+    nav a{ color:var(--accent); text-decoration:none; font-weight:600; padding:.4rem .8rem; border:2px solid transparent; border-radius:var(--radius); transition:.2s; }
+    nav a:hover{ border-color:var(--accent); }
+    main{ flex:1; max-width:1000px; margin:0 auto; padding:0 1rem 3rem; width:100%; }
+    section{ margin-bottom:2.5rem; }
+    h2{ margin-bottom:.7rem; font-size:1.4rem; }
+    .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1.2rem; }
+    .card{ background:var(--card); border-radius:var(--radius); box-shadow:0 2px 6px rgba(0,0,0,.06); overflow:hidden; transition:.25s; }
+    .card:hover{ transform:translateY(-4px); box-shadow:0 6px 14px rgba(0,0,0,.09); }
+    .card img{ width:100%; height:180px; object-fit:cover; display:block; }
+    .card div{ padding:.9rem 1rem; }
+    .card h3{ font-size:1.05rem; margin-bottom:.3rem; }
+    .card small{ color:#666; }
+    footer{ text-align:center; padding:1.5rem 1rem; font-size:.9rem; color:#777; }
+    @media(max-width:600px){ header h1{ font-size:1.7rem; } nav{ gap:.6rem; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Zawar Ahmad</h1>
+    <p>Graphic & UI/UX Designer bridging creativity and code.</p>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="work">
+      <h2>Selected Projects</h2>
+      <div class="grid">
+        <a class="card" href="https://behance.net/zawarahmad" target="_blank" rel="noopener">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==" alt="Amazon Listing Graphics">
+          <div>
+            <h3>Amazon A+ Graphics</h3>
+            <small>Product mock-ups, infographics & lifestyle images</small>
+          </div>
+        </a>
+        <a class="card" href="https://behance.net/zawarahmad" target="_blank" rel="noopener">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==" alt="Brand Identity">
+          <div>
+            <h3>Brand Identity Packs</h3>
+            <small>Logo suites, colour palettes & social kits</small>
+          </div>
+        </a>
+        <a class="card" href="https://behance.net/zawarahmad" target="_blank" rel="noopener">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAAAABJRU5ErkJggg==" alt="UI/UX Wireframes">
+          <div>
+            <h3>UI/UX Wireframes</h3>
+            <small>Figma prototypes for SaaS & e-commerce</small>
+          </div>
+        </a>
+        <a class="card" href="https://behance.net/zawarahmad" target="_blank" rel="noopener">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==" alt="Video Editing">
+          <div>
+            <h3>Short-form Video Ads</h3>
+            <small>Premiere Pro edits for TikTok & Reels</small>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I’m a Computer-Systems undergraduate who speaks both “design” and “development”.
+        For 5+ years I’ve helped 250+ clients on Fiverr & Upwork increase sales through scroll-stopping Amazon graphics, clean UI/UX and snappy video ads.
+        When I’m not pushing pixels you’ll find me tinkering with front-end code or exploring Human-Computer Interaction papers.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Let’s create something.</h2>
+      <p>
+        Email: <a href="mailto:zawarahmad833@gmail.com">zawarahmad833@gmail.com</a><br>
+        WhatsApp: <a href="https://wa.me/923119943699">+92 311 994 3699</a><br>
+        Behance: <a href="https://behance.net/zawarahmad" target="_blank" rel="noopener">behance.net/zawarahmad</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Zawar Ahmad. Built with plain HTML/CSS—no frameworks, no fuss.
+  </footer>
+</body>
+</html>
