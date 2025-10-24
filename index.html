@@ -2,201 +2,168 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Zawar Ahmad – Luxury Portfolio</title>
+  <title>Zawar Ahmad – Design Studio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Google Fonts : classy cursive + clean body -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --gold:#c9a34e;
-      --black:#0e0e0e;
-      --white:#f5f5f5;
-      --gray:#888;
-    }
+    :root{--gold:#c9a34e;--black:#050505;--white:#fafafa;--gray:#777;--ease:cubic-bezier(.4,0,.2,1)}
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{
-      font-family:'Inter',sans-serif;
-      color:var(--white);
-      background:var(--black);
-      overflow-x:hidden;
-    }
-    /* --- parallax hero --- */
-    .hero{
-      height:100vh;
-      position:relative;
-      display:flex;align-items:center;justify-content:center;
-      text-align:center;
-    }
-    .hero::before{
-      content:"";
-      position:absolute;
-      top:0;left:0;width:100%;height:120%;
-      background:url(https://source.unsplash.com/random/1920x1080/?luxury,gold) center/cover no-repeat;
-      will-change:transform;
-      z-index:-2;
-    }
-    .hero::after{ /* dark overlay */
-      content:"";
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,.55);
-      z-index:-1;
-    }
-    .hero h1{
-      font-family:'Playfair Display',serif;
-      font-size:clamp(3rem,10vw,6rem);
-      letter-spacing:4px;
-      font-weight:700;
-      color:var(--gold);
-      text-shadow:0 0 20px rgba(201,163,78,.6);
-    }
-    .hero p{font-size:1.3rem;margin-top:1rem;letter-spacing:2px}
+    body{font-family:'Inter',sans-serif;color:var(--white);background:var(--black);overflow-x:hidden}
+    /* --- huge moving background --- */
+    .bg-video{position:fixed;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+    .overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:-1}
     /* --- nav --- */
-    nav{
-      position:fixed;
-      top:0;width:100%;
-      background:rgba(0,0,0,.45);
-      backdrop-filter:blur(8px);
-      display:flex;gap:2rem;justify-content:center;
-      padding:1rem 0;
-      z-index:1000;
-    }
-    nav a{color:var(--white);text-decoration:none;font-weight:500;transition:.3s}
+    nav{position:fixed;top:0;width:100%;padding:1.2rem 2rem;background:rgba(5,5,5,.45);backdrop-filter:blur(12px);display:flex;gap:2rem;justify-content:center;z-index:1000}
+    nav a{color:var(--white);text-decoration:none;font-weight:600;letter-spacing:1px;transition:.3s}
     nav a:hover{color:var(--gold)}
+    /* --- hero --- */
+    .hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 1rem}
+    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(3.5rem,10vw,7rem);font-weight:900;letter-spacing:4px;line-height:1.1}
+    .hero .sub{font-size:1.4rem;margin-top:1rem;letter-spacing:2px;color:var(--gold)}
+    .scroll-btn{display:inline-block;margin-top:2.5rem;padding:.8rem 2rem;border:1px solid var(--gold);border-radius:30px;color:var(--gold);text-decoration:none;transition:.3s}
+    .scroll-btn:hover{background:var(--gold);color:#000}
     /* --- sections --- */
     section{padding:6rem 1rem;max-width:1100px;margin:0 auto}
-    h2{font-family:'Playfair Display',serif;font-size:2.8rem;margin-bottom:2rem;text-align:center;letter-spacing:2px}
-    /* --- clients marquee --- */
-    .clients{
-      display:flex;gap:3rem;overflow:hidden;
-      white-space:nowrap;
-      animation:scroll 25s linear infinite;
-      font-size:1.2rem;color:var(--gray);
-    }
-    .clients span{font-weight:500;color:var(--gold)}
-    @keyframes scroll{
-      0%{transform:translateX(0)}
-      100%{transform:translateX(-50%)}
-    }
-    /* --- portfolio cards --- */
+    h2{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:700;margin-bottom:2rem;text-align:center;letter-spacing:2px}
+    .lead{max-width:700px;margin:0 auto 4rem;text-align:center;font-size:1.2rem;line-height:1.7;color:var(--gray)}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2.5rem}
-    .card{
-      background:#111;
-      border:1px solid #222;
-      border-radius:12px;
-      overflow:hidden;
-      transition:.4s;
-      position:relative;
-    }
-    .card:hover{transform:translateY(-7px);border-color:var(--gold);box-shadow:0 0 25px rgba(201,163,78,.35)}
+    .card{background:#111;border:1px solid #222;border-radius:12px;overflow:hidden;transition:.4s}
+    .card:hover{transform:translateY(-7px);border-color:var(--gold)}
     .card img{width:100%;height:240px;object-fit:cover;display:block}
-    .card div{padding:1.5rem}
-    .card h3{margin-bottom:.5rem;font-size:1.4rem;font-weight:500}
+    .card div{padding:1.8rem}
+    .card h3{margin-bottom:.5rem;font-size:1.4rem;font-weight:600}
     .card small{color:var(--gray)}
-    /* --- contact --- */
-    .contact{text-align:center}
-    .contact a{
-      display:inline-block;margin:.5rem 1rem;
-      padding:.7rem 1.8rem;border:1px solid var(--gold);border-radius:30px;
-      color:var(--gold);text-decoration:none;transition:.3s
-    }
-    .contact a:hover{background:var(--gold);color:#000}
+    /* --- big text blocks --- */
+    .text-block{margin-bottom:3rem}
+    .text-block h3{font-size:1.6rem;margin-bottom:1rem;font-weight:600}
+    .text-block p{margin-bottom:1rem;line-height:1.8}
+    /* --- client wall --- */
+    .clients{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;margin-top:3rem}
+    .clients span{background:#111;border:1px solid #222;padding:.6rem 1.4rem;border-radius:20px;font-size:.95rem}
     /* --- footer --- */
-    footer{text-align:center;padding:3rem 1rem;font-size:.9rem;color:var(--gray)}
-    /* --- parallax scroll (tiny js) --- */
-    .parallax{will-change:transform}
+    footer{text-align:center;padding:4rem 1rem;font-size:.9rem;color:var(--gray)}
+    /* --- entrance anims --- */
+    .fade-up{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+    .fade-up.visible{opacity:1;transform:translateY(0)}
   </style>
 </head>
 <body>
-  <!-- fixed nav -->
+  <!-- moving background -->
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="https://cdn.coverr.co/videos/coverr-golden-particles-9595/1080p.mp4" type="video/mp4">
+    <!-- fallback still if video blocked -->
+    <img src="https://source.unsplash.com/random/1920x1080/?luxury,gold,abstract" alt="bg">
+  </video>
+  <div class="overlay"></div>
+
+  <!-- nav -->
   <nav>
-    <a href="#work">Work</a>
-    <a href="#clients">Clients</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+    <a href="#work">Work</a><a href="#process">Process</a><a href="#clients">Clients</a><a href="#contact">Contact</a>
   </nav>
 
-  <!-- parallax hero -->
-  <section class="hero parallax">
-    <div>
+  <!-- hero -->
+  <section class="hero">
+    <div class="fade-up">
       <h1>Zawar Ahmad</h1>
-      <p>Graphic & UI/UX Designer</p>
+      <p class="sub">Independent Design Studio</p>
+      <a href="#work" class="scroll-btn">Explore Work</a>
     </div>
   </section>
 
   <!-- portfolio -->
   <section id="work">
-    <h2>Selected Works</h2>
-    <div class="grid">
-      <a class="card" href="https://behance.net/zawarahmad" target="_blank" rel="noopener">
-        <img src="https://source.unsplash.com/random/600x400/?product,amazon" alt="Amazon">
-        <div>
-          <h3>Amazon A+ Graphics</h3>
-          <small>High-converting product mock-ups & infographics</small>
-        </div>
-      </a>
-      <a class="card" href="https://behance.net/zawarahmad" target="_blank" rel="noopener">
+    <h2 class="fade-up">Selected Works</h2>
+    <p class="lead fade-up">From Amazon listings to SaaS dashboards, we craft visuals that convert, delight and endure. Every pixel is placed with purpose, every interaction engineered for emotion.</p>
+    <div class="grid fade-up">
+      <div class="card">
+        <img src="https://source.unsplash.com/random/600x400/?amazon,product" alt="Amazon">
+        <div><h3>Amazon A+ Graphics</h3><small>Infographics, lifestyle mock-ups, enhanced brand content that lifts conversion up to 18 %.</small></div>
+      </div>
+      <div class="card">
         <img src="https://source.unsplash.com/random/600x400/?branding,gold" alt="Brand">
-        <div>
-          <h3>Brand Identity Packs</h3>
-          <small>Logos, palettes, social kits</small>
-        </div>
-      </a>
-      <a class="card" href="https://behance.net/zawarahmad" target="_blank" rel="noopener">
+        <div><h3>Brand Identity Packs</h3><small>Logos, colour systems, typography and social kits that feel premium at first glance.</small></div>
+      </div>
+      <div class="card">
         <img src="https://source.unsplash.com/random/600x400/?video,neon" alt="Video">
-        <div>
-          <h3>Short-Form Video Ads</h3>
-          <small>TikTok, Reels, YouTube shorts</small>
-        </div>
-      </a>
-      <a class="card" href="https://behance.net/zawarahmad" target="_blank" rel="noopener">
+        <div><h3>Short-Form Video Ads</h3><small>15-30 s TikTok, Reels & YouTube hooks edited for retention and ROI.</small></div>
+      </div>
+      <div class="card">
         <img src="https://source.unsplash.com/random/600x400/?ui,ux,dark" alt="UI/UX">
-        <div>
-          <h3>UI/UX Wireframes</h3>
-          <small>Figma prototypes & user flows</small>
-        </div>
-      </a>
+        <div><h3>UI/UX Wireframes</h3><small>User flows, Figma prototypes and dev-ready specs that bridge design and code.</small></div>
+      </div>
     </div>
   </section>
 
-  <!-- fake client list (scrolls) -->
+  <!-- process -->
+  <section id="process">
+    <h2 class="fade-up">Our Process</h2>
+    <div class="text-block fade-up">
+      <h3>1. Discover & Research</h3>
+      <p>We start every engagement with deep-dive workshops, competitor audits and user-interview synthesis. Understanding market gaps and emotional triggers allows us to position your brand for maximum impact.</p>
+    </div>
+    <div class="text-block fade-up">
+      <h3>2. Concept & Iterate</h3>
+      <p>Rapid sketching, mood-boarding and high-fidelity mock-ups are shared in Figma. Feedback loops are compressed to 48-hour cycles so momentum never stalls.</p>
+    </div>
+    <div class="text-block fade-up">
+      <h3>3. Produce & Polish</h3>
+      <p>Once direction is locked, we build final assets in Adobe CC and Figma, optimise for web or print specs, and deliver organised source files with style-guides.</p>
+    </div>
+    <div class="text-block fade-up">
+      <h3>4. Launch & Measure</h3>
+      <p>Post-launch, we stick around to A-B test thumbnails, tweak CTR-driven imagery and supply additional formats as your product evolves.</p>
+    </div>
+  </section>
+
+  <!-- clients -->
   <section id="clients">
-    <h2>Trusted by</h2>
-    <div class="clients">
-      <span>AMZVerse</span> • Luxury Scents Co • HuntingGear Pro • Latin Wealth Podcast • Gradient Institute • Tech Startup X • Ecom Brand Y • Creative Agency Z •
-      <!-- duplicate for seamless loop -->
-      <span>AMZVerse</span> • Luxury Scents Co • HuntingGear Pro • Latin Wealth Podcast • Gradient Institute • Tech Startup X • Ecom Brand Y • Creative Agency Z •
+    <h2 class="fade-up">Clients & Collaborators</h2>
+    <p class="lead fade-up">Trusted by startups, Amazon aggregators, podcast networks and niche e-commerce brands across five continents.</p>
+    <div class="clients fade-up">
+      <span>AMZVerse</span><span>Luxury Scents Co</span><span>HuntingGear Pro</span><span>Latin Wealth Podcast</span><span>Gradient Institute</span><span>Tech Startup X</span><span>E-com Brand Y</span><span>Creative Agency Z</span>
     </div>
   </section>
 
   <!-- about -->
   <section id="about">
-    <h2>About Me</h2>
-    <p style="max-width:700px;margin:0 auto;text-align:center;color:#ccc">
-      Computer-Systems undergrad & self-taught designer. 5+ years, 250+ clients, 1 000+ projects across Amazon, Shopify, SaaS and creator economy. I merge pixel-perfect visuals with code-friendly assets so your brand looks expensive and loads fast.
-    </p>
+    <h2 class="fade-up">About the Studio</h2>
+    <p class="lead fade-up">Founded in 2019, the studio operates as a one-man powerhouse with a global network of copywriters, motion artists and developers. This hybrid model keeps overheads low and creativity high.</p>
+    <div class="text-block fade-up">
+      <h3>Philosophy</h3>
+      <p>We believe design is a business language, not decoration. Every choice—colour, contrast, curve—must serve a strategic goal: higher clicks, longer retention, stronger recall.</p>
+    </div>
+    <div class="text-block fade-up">
+      <h3>Toolbox</h3>
+      <p>Adobe Photoshop, Illustrator, Premiere Pro, After Effects, Figma, Webflow, basic React + Tailwind for dev hand-off. If you need 3-D, we fire up Blender; if you need motion, we graph in After Effects.</p>
+    </div>
+    <div class="text-block fade-up">
+      <h3>Metrics we track</h3>
+      <p>Click-through rate, session duration, scroll depth, conversion rate, brand-recall uplift. Pretty is pointless if it doesn’t perform.</p>
+    </div>
   </section>
 
   <!-- contact -->
-  <section id="contact" class="contact">
-    <h2>Let’s create something timeless.</h2>
-    <a href="mailto:zawarahmad833@gmail.com">Email</a>
-    <a href="https://wa.me/923119943699">WhatsApp</a>
-    <a href="https://behance.net/zawarahmad" target="_blank" rel="noopener">Behance</a>
+  <section id="contact" class="text-block" style="text-align:center">
+    <h2 class="fade-up">Let’s build something unforgettable.</h2>
+    <p class="fade-up">Whether you need a full re-brand, a spike in Amazon sales or a slick SaaS prototype, reach out and let’s talk timelines, budgets and big ideas.</p>
+    <div class="fade-up" style="margin-top:2.5rem">
+      <a href="mailto:zawarahmad833@gmail.com" style="margin:0 .5rem;padding:.8rem 2rem;border:1px solid var(--gold);border-radius:30px;color:var(--gold);text-decoration:none;transition:.3s">Email</a>
+      <a href="https://wa.me/923119943699" style="margin:0 .5rem;padding:.8rem 2rem;border:1px solid var(--gold);border-radius:30px;color:var(--gold);text-decoration:none;transition:.3s">WhatsApp</a>
+      <a href="https://behance.net/zawarahmad" target="_blank" style="margin:0 .5rem;padding:.8rem 2rem;border:1px solid var(--gold);border-radius:30px;color:var(--gold);text-decoration:none;transition:.3s">Behance</a>
+    </div>
   </section>
 
   <footer>
-    © 2025 Zawar Ahmad. Crafted with caffeine & curiosity.
+    © 2025 Zawar Ahmad Studio. All rights reserved.
   </footer>
 
-  <!-- simple parallax -->
+  <!-- entrance animations -->
   <script>
-    const parallax=document.querySelector('.parallax');
-    window.addEventListener('scroll',()=>{
-      const scrolled=window.pageYOffset;
-      parallax.style.transform=`translateY(${scrolled*0.4}px)`;
+    const obs=new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')},{threshold:.2})
     });
+    document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
   </script>
 </body>
 </html>
