@@ -2,36 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Zawar Ahmad – Graphic & UI/UX Designer</title>
+  <title>Zawar Ahmad – Minimal Luxury Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    :root{ --bg:#fafafa; --text:#222; --accent:#0052ff; --card:#fff; --radius:8px; font:16px/1.6 "Segoe UI",system-ui,sans-serif; }
-    *{ box-sizing:border-box; margin:0; padding:0; }
-    body{ background:var(--bg); color:var(--text); display:flex; flex-direction:column; min-height:100vh; }
-    header{ text-align:center; padding:3rem 1rem 2rem; }
-    header h1{ font-size:2.2rem; margin-bottom:.2rem; }
-    header p{ color:#555; }
-    nav{ display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom:2rem; }
-    nav a{ color:var(--accent); text-decoration:none; font-weight:600; padding:.4rem .8rem; border:2px solid transparent; border-radius:var(--radius); transition:.2s; }
-    nav a:hover{ border-color:var(--accent); }
-    main{ flex:1; max-width:1000px; margin:0 auto; padding:0 1rem 3rem; width:100%; }
-    section{ margin-bottom:2.5rem; }
-    h2{ margin-bottom:.7rem; font-size:1.4rem; }
-    .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1.2rem; }
-    .card{ background:var(--card); border-radius:var(--radius); box-shadow:0 2px 6px rgba(0,0,0,.06); overflow:hidden; transition:.25s; }
-    .card:hover{ transform:translateY(-4px); box-shadow:0 6px 14px rgba(0,0,0,.09); }
-    .card img{ width:100%; height:180px; object-fit:cover; display:block; }
-    .card div{ padding:.9rem 1rem; }
-    .card h3{ font-size:1.05rem; margin-bottom:.3rem; }
-    .card small{ color:#666; }
-    footer{ text-align:center; padding:1.5rem 1rem; font-size:.9rem; color:#777; }
-    @media(max-width:600px){ header h1{ font-size:1.7rem; } nav{ gap:.6rem; } }
+    :root{
+      --bg:#000;
+      --text:#fff;
+      --gold:#d4af37;
+      --radius:12px;
+      font:18px/1.5 "Helvetica Neue",Arial,sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--text);display:flex;flex-direction:column;min-height:100vh;letter-spacing:.5px}
+    header{text-align:center;padding:5rem 1rem 3rem}
+    header h1{font-size:3.5rem;font-weight:200;letter-spacing:8px;text-transform:uppercase;margin-bottom:.5rem}
+    header p{color:var(--gold);font-size:1.1rem;letter-spacing:2px}
+    nav{display:flex;gap:2rem;justify-content:center;margin:2rem 0}
+    nav a{color:var(--text);text-decoration:none;font-weight:600;padding:.5rem 1rem;border:1px solid var(--gold);border-radius:var(--radius);transition:.3s}
+    nav a:hover{background:var(--gold);color:#000}
+    main{flex:1;max-width:1100px;margin:0 auto;padding:0 1rem 4rem;width:100%}
+    h2{margin-bottom:1.5rem;font-size:2rem;font-weight:200;letter-spacing:3px;text-align:center}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+    .card{background:#111;border:1px solid #333;border-radius:var(--radius);overflow:hidden;transition:.4s;position:relative}
+    .card:hover{border-color:var(--gold);transform:translateY(-5px);box-shadow:0 0 20px rgba(212,175,55,.35)}
+    .card img{width:100%;height:220px;object-fit:cover;display:block}
+    .card div{padding:1.5rem}
+    .card h3{margin-bottom:.5rem;font-size:1.3rem;font-weight:400;letter-spacing:1px}
+    .card small{color:#aaa}
+    footer{text-align:center;padding:2rem 1rem;font-size:.9rem;color:#555}
+    @media(max-width:600px){header h1{font-size:2.2rem;letter-spacing:4px}nav{gap:1rem}}
   </style>
 </head>
 <body>
   <header>
     <h1>Zawar Ahmad</h1>
-    <p>Graphic & UI/UX Designer bridging creativity and code.</p>
+    <p>Graphic & UI/UX Designer — Minimal Luxury</p>
     <nav>
       <a href="#work">Work</a>
       <a href="#about">About</a>
@@ -44,31 +49,31 @@
       <h2>Selected Projects</h2>
       <div class="grid">
         <a class="card" href="https://behance.net/zawarahmad" target="_blank" rel="noopener">
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==" alt="Amazon Listing Graphics">
+          <img src="amazon-thumb.png" alt="Amazon A+ Graphics">
           <div>
             <h3>Amazon A+ Graphics</h3>
             <small>Product mock-ups, infographics & lifestyle images</small>
           </div>
         </a>
         <a class="card" href="https://behance.net/zawarahmad" target="_blank" rel="noopener">
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==" alt="Brand Identity">
+          <img src="brand-thumb.png" alt="Brand Identity">
           <div>
             <h3>Brand Identity Packs</h3>
             <small>Logo suites, colour palettes & social kits</small>
           </div>
         </a>
         <a class="card" href="https://behance.net/zawarahmad" target="_blank" rel="noopener">
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAAAABJRU5ErkJggg==" alt="UI/UX Wireframes">
-          <div>
-            <h3>UI/UX Wireframes</h3>
-            <small>Figma prototypes for SaaS & e-commerce</small>
-          </div>
-        </a>
-        <a class="card" href="https://behance.net/zawarahmad" target="_blank" rel="noopener">
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==" alt="Video Editing">
+          <img src="video-thumb.jpg" alt="Video Editing">
           <div>
             <h3>Short-form Video Ads</h3>
             <small>Premiere Pro edits for TikTok & Reels</small>
+          </div>
+        </a>
+        <a class="card" href="https://behance.net/zawarahmad" target="_blank" rel="noopener">
+          <img src="https://via.placeholder.com/600x400/000000/d4af37?text=UI%2FUX+Coming+Soon" alt="UI/UX Wireframes">
+          <div>
+            <h3>UI/UX Wireframes</h3>
+            <small>Figma prototypes for SaaS & e-commerce</small>
           </div>
         </a>
       </div>
@@ -76,7 +81,7 @@
 
     <section id="about">
       <h2>About</h2>
-      <p>
+      <p style="max-width:700px;margin:0 auto;text-align:center;color:#ccc">
         I’m a Computer-Systems undergraduate who speaks both “design” and “development”.
         For 5+ years I’ve helped 250+ clients on Fiverr & Upwork increase sales through scroll-stopping Amazon graphics, clean UI/UX and snappy video ads.
         When I’m not pushing pixels you’ll find me tinkering with front-end code or exploring Human-Computer Interaction papers.
@@ -85,16 +90,16 @@
 
     <section id="contact">
       <h2>Let’s create something.</h2>
-      <p>
-        Email: <a href="mailto:zawarahmad833@gmail.com">zawarahmad833@gmail.com</a><br>
-        WhatsApp: <a href="https://wa.me/923119943699">+92 311 994 3699</a><br>
-        Behance: <a href="https://behance.net/zawarahmad" target="_blank" rel="noopener">behance.net/zawarahmad</a>
+      <p style="text-align:center">
+        <a href="mailto:zawarahmad833@gmail.com" style="color:var(--gold);text-decoration:none">Email</a> • 
+        <a href="https://wa.me/923119943699" style="color:var(--gold);text-decoration:none">WhatsApp</a> • 
+        <a href="https://behance.net/zawarahmad" target="_blank" style="color:var(--gold);text-decoration:none">Behance</a>
       </p>
     </section>
   </main>
 
   <footer>
-    © 2025 Zawar Ahmad. Built with plain HTML/CSS—no frameworks, no fuss.
+    © 2025 Zawar Ahmad. All rights reserved.
   </footer>
 </body>
 </html>
